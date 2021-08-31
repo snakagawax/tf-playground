@@ -128,15 +128,6 @@ resource "aws_security_group_rule" "rds_postgress" {
   security_group_id = aws_security_group.rds_sg.id
 }
 
-resource "aws_security_group_rule" "rds_mysql" {
-  type              = "ingress"
-  from_port         = 3306
-  to_port           = 3306
-  protocol          = "tcp"
-  cidr_blocks       = ["0.0.0.0/0"]
-  security_group_id = aws_security_group.rds_sg.id
-}
-
 resource "aws_security_group_rule" "rds_sg-egress" {
   type              = "egress"
   from_port         = 0
